@@ -14,8 +14,6 @@ import java.time.LocalTime;
 
 public class Main {
 
-    static int test = 1;
-
     public static void main(String[] args) throws IOException {
 
         HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
@@ -86,18 +84,10 @@ public class Main {
         public void handle(HttpExchange exchange) {
 
             String method = exchange.getRequestMethod();
-            test = test + 1;
-            String response = "<html> <body>" + getHourlyTemp() + " " + test + "</body>" +
-                    " <form action\"/\" method =\" method=\"POST\">" +
-                    " <button type=\"submit\">Refresh</button></html>";
-
-            if ("POST".equals(exchange.getRequestMethod())) {
-
-                response = "<html> <body>" + getHourlyTemp() + " " + test + "</body>" +
-                        " <form action\"/\" method =\" method=\"POST\">" +
-                        " <button type=\"submit\">Refresh</button></html>";
-
-            }
+            String response = "<html> <body>"
+                    + getHourlyTemp() + " " +
+                    " <form action=\"/\" method=\"POST\">" +
+                    " <button type=\"submit\">Refresh</button> </form> </body> </html>";
 
                 try {
 
