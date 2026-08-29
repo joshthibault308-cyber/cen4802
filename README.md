@@ -1,2 +1,4 @@
 # cen4802
-Weather application
+
+Joshua Thibault
+Description: This application lets you see the hourly weather for the temperature in Daytona Beach.
